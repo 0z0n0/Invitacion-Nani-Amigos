@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 | Nani</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="asset/1.webp">
+
+    <!-- Open Graph (preview en WhatsApp / redes) -->
+    <meta property="og:title"       content="Mis 15 — Nani 🌿">
+    <meta property="og:description" content="¡Estás invitado/a a mis 15! Sábado 10 de Abril de 2027 · El Campito del Abuelo, Ibarlucea">
+    <meta property="og:image"       content="asset/1.webp">
+    <meta property="og:type"        content="website">
+    <meta name="twitter:card"       content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- PANTALLA DE INTRO (video de apertura) -->
+    <div id="intro-screen">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="asset/intro.mp4" type="video/mp4">
+        </video>
+        <button id="btn-saltar-intro" aria-label="Saltar introducción">Saltar intro</button>
+    </div>
+
+    <!-- PORTADA (Hero) -->
+    <header class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2>Mis 15</h2>
+                <h1>Nani</h1>
+                <p class="fecha-destacada">10 . 04 . 2027</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- MARCO: envuelve todo el contenido post-hero -->
+    <div class="marco-contenedor">
+
+    <!-- SWITCH DE IDIOMA -->
+    <div class="lang-switch-wrapper">
+        <button id="lang-es" class="lang-btn lang-active" aria-label="Español">ES</button>
+        <span class="lang-divider">|</span>
+        <button id="lang-pt" class="lang-btn" aria-label="Português">PT</button>
+    </div>
+
+    <!-- CUENTA REGRESIVA -->
+    <section class="countdown-section">
+        <h3 data-i18n="countdown_title">Falta muy poco...</h3>
+        <div id="reloj" class="reloj-container">
+            <div class="tiempo"><span id="dias">00</span><p data-i18n="dias">Días</p></div>
+            <div class="tiempo"><span id="horas">00</span><p data-i18n="horas">Hs</p></div>
+            <div class="tiempo"><span id="minutos">00</span><p data-i18n="minutos">Min</p></div>
+            <div class="tiempo"><span id="segundos">00</span><p data-i18n="segundos">Seg</p></div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO: RSVP (F-04: CTA principal arriba) -->
+    <section class="form-section rsvp-container">
+        <img src="asset/asistencia.webp" alt="Decoración Confirmar Asistencia" class="seccion-gif" aria-hidden="true">
+        <h3 data-i18n="rsvp_title">Confirmar Asistencia</h3>
+        <p data-i18n="rsvp_deadline">Por favor, confirmá antes del 10/02/2027</p>
+        <form id="form-rsvp">
+            <input type="text" id="rsvp-nombre" data-i18n-placeholder="rsvp_nombre_ph" placeholder="Nombre y Apellido" maxlength="100" autocomplete="name" required>
+            
+            <label for="rsvp-asiste" data-i18n="rsvp_asiste_label">¿Asistís?</label>
+            <select id="rsvp-asiste" required>
+                <option value="si" data-i18n="rsvp_si">Sí, confirmo</option>
+                <option value="no" data-i18n="rsvp_no">No podré asistir</option>
+            </select>
+
+            <input type="text" id="rsvp-menu" data-i18n-placeholder="rsvp_menu_ph" placeholder="Menú especial (Celíaco, Vegano, etc.) o 'Ninguno'" maxlength="150">
+            
+            <button type="submit" id="btn-rsvp" class="btn-primario" data-i18n="rsvp_btn">Confirmar</button>
+        </form>
+        <p id="msg-rsvp" class="mensaje-form"></p>
+    </section>
+
+    <section class="payment-section" aria-labelledby="pago-title">
+        <div class="payment-card">
+            <img src="asset/regalos.webp" alt="" class="seccion-gif" aria-hidden="true">
+            <h3 id="pago-title" data-i18n="pago_title">Valor de la tarjeta</h3>
+            <p class="payment-amount">$15.000</p>
+            <dl class="payment-details">
+                <div>
+                    <dt data-i18n="pago_alias">Alias</dt>
+                    <dd>tarjeta.nani15</dd>
+                </div>
+                <div>
+                    <dt data-i18n="pago_titular">Titular</dt>
+                    <dd>Alejandro Zampini</dd>
+                </div>
+            </dl>
+            <p class="payment-note" data-i18n="pago_nota">Cuando realices el pago, envianos el comprobante para que podamos registrarlo.</p>
+            <a href="https://wa.me/5493415825626" target="_blank" rel="noopener noreferrer" class="btn-primario" data-i18n="pago_whatsapp">Enviar comprobante por WhatsApp</a>
+        </div>
+    </section>
+
+
+    <!-- UBICACIÓN Y FIESTA -->
+    <section class="info-section">
+        <img src="asset/la-fiesta.webp" alt="Decoración La Fiesta" class="seccion-gif" aria-hidden="true">
+        <h3 data-i18n="fiesta_title">La Fiesta</h3>
+        <p><strong data-i18n="fiesta_fecha_label">Fecha:</strong> <span data-i18n="fiesta_fecha_val">Sábado 10 de Abril de 2027</span></p>
+        <p><strong data-i18n="fiesta_hora_label">Horario:</strong> <span data-i18n="fiesta_hora_val">21:00 a 04:00 hs.</span></p>
+        <p><strong data-i18n="fiesta_lugar_label">Lugar:</strong> <span data-i18n="fiesta_lugar_val">El Campito del Abuelo, Ibarlucea, Santa Fe</span></p>
+        <a href="https://maps.app.goo.gl/5xK7oFv8d6gdrRo78" target="_blank" rel="noopener noreferrer" class="btn-primario" data-i18n="fiesta_mapa">Ver en Google Maps</a>
+    </section>
+
+    <!-- DETALLES DEL EVENTO -->
+    <section class="detalles-section">
+        <div class="detalle-card">
+            <img src="asset/dress-code.webp" alt="Decoración Dress Code" class="seccion-gif" aria-hidden="true">
+            <h4 data-i18n="dress_title">Dress Code</h4>
+            <p data-i18n="dress_ellas">Ellas: Vestido.</p>
+            <p data-i18n="dress_ellos">Ellos: Camisa y pantalón.</p>
+            <p><small data-i18n="dress_prohibidos">Colores Prohibidos: Bordo, Rosa, Dorado.</small></p>
+        </div>
+        <div class="detalle-card">
+            <img src="asset/regalos.webp" alt="Decoración Regalos" class="seccion-gif" aria-hidden="true">
+            <h4 data-i18n="regalos_title">Regalos</h4>
+            <p data-i18n="regalos_texto">Tu presencia es mi mejor regalo, pero si deseas colaborar:</p>
+            <p><strong>Alias:</strong> nanizs.mis15</p>
+        </div>
+    </section>
+
+    <!-- FORMULARIO: SUGERIR CANCIÓN -->
+    <section class="form-section">
+        <img src="asset/musica.webp" alt="Decoración Música" class="seccion-gif" aria-hidden="true">
+        <h3 data-i18n="musica_title">Música</h3>
+        <p data-i18n="musica_texto">¿Qué canción no puede faltar?</p>
+        <form id="form-canciones">
+            <input type="text" id="cancion-nombre" data-i18n-placeholder="musica_nombre_ph" placeholder="Tu Nombre" maxlength="100" autocomplete="name" required>
+            <input type="text" id="cancion-tema" data-i18n-placeholder="musica_tema_ph" placeholder="Canción y Artista" maxlength="150" required>
+            <button type="submit" class="btn-primario" data-i18n="musica_btn">Sugerir Canción</button>
+        </form>
+        <p id="msg-canciones" class="mensaje-form"></p>
+    </section>
+
+    <!-- CARRUSEL DE FOTOS -->
+    <section class="carrusel-section">
+        <h3 data-i18n="momentos_title">Momentos</h3>
+        <div class="carrusel-wrapper">
+            <button class="carrusel-btn carrusel-prev" aria-label="Anterior">&#8249;</button>
+            <div class="carrusel-track-container">
+                <div class="carrusel-track" id="carrusel-track">
+                    <div class="carrusel-slide"><img src="asset/weader.webp" alt="Momento especial de Nani"></div>
+                    <div class="carrusel-slide"><img src="asset/2.webp"      alt="Momento 2 de Nani" loading="lazy"></div>
+                    <div class="carrusel-slide"><img src="asset/3.webp"      alt="Momento 3 de Nani" loading="lazy"></div>
+                    <div class="carrusel-slide"><img src="asset/4.webp"      alt="Momento 4 de Nani" loading="lazy"></div>
+                    <div class="carrusel-slide"><img src="asset/5.webp"      alt="Momento 5 de Nani" loading="lazy"></div>
+                    <div class="carrusel-slide"><img src="asset/6.webp"      alt="Momento 6 de Nani" loading="lazy"></div>
+                    <div class="carrusel-slide"><img src="asset/7.webp"      alt="Momento 7 de Nani" loading="lazy"></div>
+                    <div class="carrusel-slide"><img src="asset/8.webp"      alt="Momento 8 de Nani" loading="lazy"></div>
+                    <div class="carrusel-slide"><img src="asset/9.webp"      alt="Momento 9 de Nani" loading="lazy"></div>                    
+                    <div class="carrusel-slide"><img src="asset/11.webp"     alt="Momento 11 de Nani" loading="lazy"></div>
+                    <div class="carrusel-slide"><img src="asset/12.webp"     alt="Momento 12 de Nani" loading="lazy"></div>
+                </div>
+            </div>
+            <button class="carrusel-btn carrusel-next" aria-label="Siguiente">&#8250;</button>
+        </div>
+        <div class="carrusel-dots" id="carrusel-dots"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p data-i18n="footer_texto">¡Te espero para celebrar juntos!</p>
+    </footer>
+
+    </div><!-- fin .marco-contenedor -->
+    <script src="script.js"></script>
+</body>
+</html>
